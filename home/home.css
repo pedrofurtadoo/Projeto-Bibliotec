@@ -1,48 +1,12 @@
-/*  CABEÇALHO */
-
-a {
-    color: var(--branco);
-    text-decoration: none;
-}
-
-.cabecalho {
-    background-color: var(--azul-escuro);
-
-    display: flex; 
-    /* POR PADRÃO O FLEX VEM NA DIREÇÃO ROW/LINHA, então não precisa do flex direction */
-
-    /* alinha n sentido do flex */
-    justify-content: space-between;
-
-    /* alinha no sentido contrário do flex */
-    align-items: center;
-
-    padding: 0 120px;
-
-    height: 10vh;
-}
-
-.navegacao {
-    display: flex;
-    align-items: center;
-
-    gap: 50px;
-}
-
-.navegacao a {
-    text-transform: uppercase;
-
-    /* 1rem -> equivale a 16px (padrão da raiz do HTML) */
-    /* 1em -> pega o tamanho da tipografia do elemento pai */
-    font-size: 1em;
-    font-weight: 500;
-
-}
 
 /* CONTEÚDO PRINCIPAL */
 
 
+
+
 /* Primeiro banner */
+
+
 
 .banner-principal {
     color: var(--branco);
@@ -92,15 +56,20 @@ a {
 
 .botao:hover {
     background-color: #2ab2ab;
-    color: var(--branco)
+    color: var(--branco);
 }
 
 .banner-principal img {
     align-self: flex-end;
-    width: 25%;
+    width: 35%;
 }
 
-/* Título das seções */
+
+
+/* TÍTULO DAS SEÇÕES */
+
+
+
 .titulo-secao {
     display: flex;
     flex-direction: column;
@@ -119,7 +88,11 @@ a {
     background-color: var(--cor-destaque);
 }
 
-/* Secao benefícios */
+
+
+/* SeçãO beneficios */
+
+
 
 .beneficios {
     padding: 50px 120px;
@@ -129,6 +102,7 @@ a {
 
     align-items: center;
     justify-content: space-between;
+
     gap: 100px;
 }
 
@@ -149,20 +123,20 @@ a {
     align-items: center;
     justify-content: center;
 
-    padding: 80px 20px 50px;  /* em cima -> direita e esquerda -> embaixo */
+    padding: 80px 20px 50px; /* em cima -> direita e esquerda -> embaixo*/
 
     border: 1px solid var(--azul-escuro);
     border-radius: 30px;
-    box-shadow: 5px 5px 30px rgba(0, 0 , 0, 0.25); /*  -> y -> blur(desfoque) -> cor com transparência */
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25); /* x -> y -> blur(desfoque) -> cor com transparência */
 
     text-align: center;
 
-    /* Cria referência de posicionamento para o ícone, quando o ícone for posicionado, usa esse card como referência */
-    /* Sem isso, o círculo poderia usar outro elemento da págna como referência e sair passeando pelo layout. */
+    /* Cria referência de posicionamento para o ícone, quando o icone for posicionado, usa esse card como referência */
+    /* sem isso, o círculo poderia usar outro elemento da página como referência e sair passeando pelo layout */
     position: relative;
 }
 
-.beneficio-icone img {
+.beneficio-icone img{
     width: 50%;
 }
 
@@ -178,18 +152,19 @@ a {
     /* Retira o ícone do fluxo normal, com o absolute ele pode ficar por cima do card */
     position: absolute;
 
-    /* Move o elemento pra cima, o valor negativo faz ele sair parcialmente do card */
+    /* Move o elemento para cima, e o valor negativo faz ele sair parcialmente do card */
     top: -15%;
 
-    /* Coloca o começo elemente em 50% da largura do card */
+    /* Coloca o começo do elemento em 50% da largura do card */ 
     left: 50%;
 
-    /* ajustamos o posicionamento do elemento, mas a borda esquerda do círculo fica no centron não o círculo inteiro */
+    /* Ajustamos o posicionamento do elemnto, mas a borda esquerda do círculo fica no centro, não o círculo inteiro*/
     transform: translateX(-50%);
 
     display: grid;
 
-    /* place-items: center; é a mesma coisa que colocar align-items: center; e justify-items: center */
+    /* place-items: center; é a mesma coisa que colocar: 
+       align-items: center; e justify-items: center; */
     place-items: center;
 }
 
@@ -205,7 +180,11 @@ a {
     width: 80%;
 }
 
-/* Banner meio */
+
+
+/* BANNER MEIO */
+
+
 
 .banner-meio {
     height: 60vh;
@@ -218,194 +197,161 @@ a {
 
     padding: 0 120px;
     color: var(--branco);
+    
 }
 
-/* Seção Livros Recomendados */
 
-.recomendados {
-    padding: 80px 120px;
 
+/* LIVROS RECOMENDADOS */
+
+
+
+.livros-recomendados {
+    padding: 60px 120px 100px
+}
+
+.livros {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.recomendado h3 {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    width: 65%;
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+
+.titulo-secao span {
+    margin-bottom: 30px;
+}
+
+.recomendado img {
+    width: 100%;
+    height: 400px;
+
+    padding: 20px;
+    margin-bottom: 0px;
+
+}
+
+.recomendado h4{
+    display: flex;
+    justify-content: center;
+}
+
+.recomendado {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 60px;
-}
 
-.recomendados-lista {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    width: 100%;
-}
-
-.livro-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.livro-card img {
-    width: 100%;
-    max-width: 200px;
-    height: 300px;
-    
-    object-fit: cover; 
-    
-    margin-bottom: 25px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-}
-
-.livro-card h3 {
-    font-size: 1.1em;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    min-height: 2.4em; 
-    
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.livro-card .autor-rotulo {
-    font-size: 0.95em;
-    color: var(--texto);
-    margin-bottom: 8px;
-}
 
-.livro-card .autor-nome {
-    font-size: 1em;
-    color: var(--texto);
-}
 
-/* RODAPÉ */
+/* RODAPE */
+
+
 
 .rodape {
     background-color: var(--azul-escuro);
-    color: var(--branco);
-    padding: 60px 120px 30px;
+    padding: 110px  120px 50px;
 }
 
-.rodape-conteudo {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-/* Logos à esquerda */
-.rodape-logos {
-    display: flex;
+.logos {
+    display: grid;
     flex-direction: column;
-    gap: 30px;
+    gap: 70px;
+
 }
 
-.logo-bibliotec {
-    height: 35px;
-    width: auto;
-}
-
-.logo-senai {
-    height: 35px;
-    width: auto;
-}
-
-/* Container dos links e redes à direita */
-.rodape-links-container {
-    display: flex;
-    gap: 80px;
-    align-items: flex-start;
-}
-
-.rodape-titulo {
-    color: var(--cor-destaque);
-    font-size: 0.95em;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.rodape-lista {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.rodape-lista a {
-    font-size: 0.85em;
+.rodape h4{
     color: var(--branco);
-    opacity: 0.9;
-    transition: opacity 0.2s;
-}
-
-.rodape-lista a:hover {
-    opacity: 1;
-    color: var(--cor-destaque);
-}
-
-/* Redes sociais */
-.rodape-redes-sociais {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.rodape-redes-sociais .rodape-titulo {
-    margin-bottom: 0;
-}
-
-.icones-redes {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.icones-redes img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.2s;
-}
-
-.icones-redes a:hover img {
-    transform: scale(1.1);
-}
-
-/* Linha divisória */
-.rodape-linha {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0px 130px;
     margin-bottom: 25px;
+    color: var(--cor-destaque);
+    font-weight: 500;
+    font-size: 17px;
 }
 
-/* Rodapé Inferior */
-.rodape-inferior {
+
+.rodape > p {
+    margin-bottom: 10px;
+    color: var(--branco);
+    padding: 0px 130px;
+}
+
+.rodape p {
+    font-size: 17   px;
+}
+
+.textos p {
+    margin-bottom: 10px;
+    color: var(--branco);
+    padding: 0px 130px;
+}
+
+.conteudo-rodape {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    font-size: 0.8em;
 }
 
-.copyright {
-    color: var(--branco);
-    opacity: 0.8;
-}
-
-.links-legais {
+.informacoes {
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
 }
 
-.links-legais a {
+.textos {
+    display: grid;
+    gap: 75px;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 100px;
+}
+
+.logos-redes img{
+    width: 30px;
+    height: 30px;
+}
+.logos-redes {
+    display: flex;
+    gap: 40px;
+}
+
+.rodape span {
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    background-color: var(--branco);
+    width: 80wh;
+    height: 1px;
+}
+
+.texto-final-rodape {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.arroba {
     color: var(--branco);
-    opacity: 0.8;
-    font-size: 1em;
-    transition: opacity 0.2s;
+    display: flex; 
 }
 
-.links-legais a:hover {
-    opacity: 1;
-    color: var(--cor-destaque);
+.links {
+    color: var(--branco);
+    display: flex;
+    gap: 70px;
 }
+
+
 
