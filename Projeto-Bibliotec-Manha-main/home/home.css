@@ -1,6 +1,3 @@
-
-
-
 /* CONTEÚDO PRINCIPAL */
 
 /* Primeiro banner */
@@ -115,11 +112,13 @@
     align-items: center;
     justify-content: center;
 
-    padding: 80px 20px 50px; /* em cima -> direita e esquerda -> embaixo */
+    padding: 80px 20px 50px;
+    /* em cima -> direita e esquerda -> embaixo */
 
     border: 1px solid var(--azul-escuro);
     border-radius: 30px;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25); /* x -> y -> blur(desfoque) -> cor com transparência */
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
+    /* x -> y -> blur(desfoque) -> cor com transparência */
 
     text-align: center;
 
@@ -232,7 +231,7 @@
 
 /* footer - feito pelos alunos */
 
-footer{
+footer {
     background-color: var(--azul-escuro);
     color: var(--branco);
     padding: 100px 120px 30px;
@@ -257,7 +256,7 @@ footer{
     gap: 100px;
 }
 
-.nav-footer  {
+.nav-footer {
     display: flex;
     flex-direction: column;
 }
@@ -267,6 +266,7 @@ footer{
     margin-bottom: 20px;
 
 }
+
 .nav-footer a {
     color: var(--branco);
     margin-bottom: 10px;
@@ -308,9 +308,9 @@ footer span {
 }
 
 /* RESPONSIVIDADE */
-
 .botao-menu {
-    display: none; /* esconde o elemento */
+    display: none;
+    /* esconde o elemento */
     background: transparent;
     border: none;
     cursor: pointer;
@@ -323,7 +323,7 @@ footer span {
     border-radius: 10px;
 }
 
-/* RESPONSIVIDADE COM TAMANHOS - MEDIA QUERY */
+/* RESPONSIVIDADE COM TAMANHOS -> MEDIA QUERY */
 
 @media (max-width: 1024px) {
 
@@ -331,7 +331,7 @@ footer span {
         font-size: 12px;
     }
 
-    .cabecalho img{
+    .cabecalho img {
         width: 60%;
     }
 
@@ -339,7 +339,7 @@ footer span {
         text-align: center;
     }
 
-    /* BENEFÍCIOS */
+    /* BENEFICIOS */
 
     .beneficios {
         gap: 50px;
@@ -352,11 +352,13 @@ footer span {
     .beneficios-lista {
         grid-template-columns: repeat(3, 30%);
 
-        overflow-x: scroll; /* permite que o objeto role para o lado */
+        overflow-x: scroll;
+        /*permite que o objeto role para o lado*/
 
         padding: 50px 20px;
 
         justify-content: flex-start;
+
     }
 
     .beneficios-lista::-webkit-scrollbar {
@@ -376,7 +378,7 @@ footer span {
         width: 60%;
     }
 
-    /* banner meio */
+    /* BANNER MEIO */
 
     .banner-meio {
         background-position: center;
@@ -392,7 +394,6 @@ footer span {
     }
 
     /* ACERVO */
-
     .acervo {
         padding: 70px 40px;
         gap: 50px;
@@ -404,6 +405,14 @@ footer span {
         gap: 40px 20px;
     }
 
+    /* PARA QUEM USOU FLEX, COLOCAR NOS LIVROS
+        flex-wrap: wrap;
+    */
+
+    /* E NO article 
+        max-width: 100%
+    */
+
     .livro img {
         max-width: 100%;
     }
@@ -411,15 +420,15 @@ footer span {
     .livro h3 {
         font-size: 1.2em;
     }
-    
-    .livro texto {
+
+    .livro-texto {
         font-size: 1em;
     }
-     
+
 }
 
 @media (max-width: 768px) {
-    
+
     .cabecalho {
         padding: 0 40px;
 
@@ -427,11 +436,12 @@ footer span {
     }
 
     .botao-menu {
-        /* Faz o menu hambúrguer aparecer novamente */
+        /* Faz o menu hamburguer aparecer novamente */
         display: flex;
     }
 
     .navegacao {
+
         background-color: var(--azul-escuro);
 
         position: absolute;
@@ -450,25 +460,23 @@ footer span {
 
         flex-direction: column;
         align-items: flex-end;
-        
+
         gap: 20px;
 
-        /* só funciona com position, quanto maior o z-index, mais pra cim ao elemento fica  */
+        /* só funciona com position, quanto maior o z-index, mais pra cima o elemento fica */
         z-index: 100;
 
         display: none;
-
     }
 
     .navegacao.ativo {
         display: flex;
-
     }
 
     /* BANNER PRINCIPAL */
 
     .banner-principal {
-        height: 50vh;
+        height: 50hv;
 
         padding: 30px 0 10px 0;
 
@@ -510,35 +518,48 @@ footer span {
         z-index: 2;
     }
 
-    /* BENEFÍCIOS */
+    /* BENEFICIO */
 
     .beneficios-lista {
         grid-template-columns: repeat(3, 45%);
     }
 
-    .beneficios-icone img {
+    .beneficio-icone img {
         width: 40%;
     }
 
-    /* BANNER DO MEIO */
+    /* BANNER NO MEIO */
     .banner-meio .texto-banner {
         display: none;
     }
 
     /* FOOTER */
-}
-    .rodape-logos {
-        width: 100%;
-        
-        flex-direction: row;
+
+    footer {
+        padding: 30px;
     }
+
+    .main {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .rodape-logos {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+    }
+
 
     .rodape-informacoes {
-        font-size: 1.0em;
-        
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
-    .footer-inferior {
-        font-size: 1.0em;
-        padding: 30px 40px;
+    .footer {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
     }
+}
