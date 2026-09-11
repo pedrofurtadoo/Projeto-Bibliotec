@@ -1,3 +1,6 @@
+
+
+
 /* CONTEÚDO PRINCIPAL */
 
 /* Primeiro banner */
@@ -112,13 +115,11 @@
     align-items: center;
     justify-content: center;
 
-    padding: 80px 20px 50px;
-    /* em cima -> direita e esquerda -> embaixo */
+    padding: 80px 20px 50px; /* em cima -> direita e esquerda -> embaixo */
 
     border: 1px solid var(--azul-escuro);
     border-radius: 30px;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
-    /* x -> y -> blur(desfoque) -> cor com transparência */
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25); /* x -> y -> blur(desfoque) -> cor com transparência */
 
     text-align: center;
 
@@ -231,7 +232,7 @@
 
 /* footer - feito pelos alunos */
 
-footer {
+footer{
     background-color: var(--azul-escuro);
     color: var(--branco);
     padding: 100px 120px 30px;
@@ -256,7 +257,7 @@ footer {
     gap: 100px;
 }
 
-.nav-footer {
+.nav-footer  {
     display: flex;
     flex-direction: column;
 }
@@ -266,7 +267,6 @@ footer {
     margin-bottom: 20px;
 
 }
-
 .nav-footer a {
     color: var(--branco);
     margin-bottom: 10px;
@@ -309,8 +309,7 @@ footer span {
 
 /* RESPONSIVIDADE */
 .botao-menu {
-    display: none;
-    /* esconde o elemento */
+    display: none; /* esconde o elemento */
     background: transparent;
     border: none;
     cursor: pointer;
@@ -326,7 +325,7 @@ footer span {
 /* RESPONSIVIDADE COM TAMANHOS -> MEDIA QUERY */
 
 @media (max-width: 1024px) {
-
+    
     html {
         font-size: 12px;
     }
@@ -352,8 +351,7 @@ footer span {
     .beneficios-lista {
         grid-template-columns: repeat(3, 30%);
 
-        overflow-x: scroll;
-        /*permite que o objeto role para o lado*/
+        overflow-x: scroll; /*permite que o objeto role para o lado*/
 
         padding: 50px 20px;
 
@@ -404,11 +402,10 @@ footer span {
 
         gap: 40px 20px;
     }
-
+    
     /* PARA QUEM USOU FLEX, COLOCAR NOS LIVROS
         flex-wrap: wrap;
     */
-
     /* E NO article 
         max-width: 100%
     */
@@ -469,6 +466,7 @@ footer span {
         display: none;
     }
 
+    /* elemento com duas classes não tem espaço */
     .navegacao.ativo {
         display: flex;
     }
@@ -476,10 +474,10 @@ footer span {
     /* BANNER PRINCIPAL */
 
     .banner-principal {
-        height: 50hv;
+        height: 50vh;
 
         padding: 30px 0 10px 0;
-
+        
         position: relative;
     }
 
@@ -500,7 +498,7 @@ footer span {
     }
 
     .banner-principal img {
-        width: 35%;
+        width: 40%;
 
         position: absolute;
         bottom: 0;
@@ -518,8 +516,7 @@ footer span {
         z-index: 2;
     }
 
-    /* BENEFICIO */
-
+    /* BENEFICIOS */
     .beneficios-lista {
         grid-template-columns: repeat(3, 45%);
     }
@@ -528,7 +525,7 @@ footer span {
         width: 40%;
     }
 
-    /* BANNER NO MEIO */
+    /* BANNER DO MEIO */
     .banner-meio .texto-banner {
         display: none;
     }
@@ -536,30 +533,102 @@ footer span {
     /* FOOTER */
 
     footer {
-        padding: 30px;
+        padding: 50px 40px;
     }
 
-    .main {
+    footer .main {
         flex-direction: column;
-        gap: 40px;
+
+        gap: 100px;
     }
 
     .rodape-logos {
         flex-direction: row;
-        align-items: center;
         justify-content: space-between;
-        gap: 0;
+        align-items: center;
+
+        gap: 30px;
     }
 
+    .rodape-logos img {
+        width: 40%;
+    }
 
     .rodape-informacoes {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 30px;
+    }
+
+    .rodape-informacoes p {
+        font-size: 1.5em;
+    }
+
+    .nav-footer a, .footer-inferior {
+        font-size: 1.2em;
+    }
+
+    footer span {
+        margin: 50px 0 30px;
     }
 
     .footer {
         flex-direction: column;
-        align-items: flex-end;
+        text-align: right;
+    }
+    
+}
+
+@media (max-width: 500px) {
+
+    .banner-principal img {
+        width: 80%;
+    }
+
+    .beneficios-lista {
+        grid-template-columns: repeat(3, 65%);
+    }
+
+    .beneficio-icone {
+        width: 35%;
+    }
+
+    .banner-meio {
+        background-position: 40%;
+    }
+
+    footer .main {
+        gap: 50px;
+    }
+
+    .rodape-informacoes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rodape-logos {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .rodape-logos img {
+        width: 100%;
+    }
+
+    .rodape-icones {
+        display: flex;
         gap: 10px;
+    }
+
+    .rodape-icones img {
+        width: 80%;
+    }
+
+    .footer-inferior {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer {
+        gap: 10px;
+        text-align: left;
     }
 }
