@@ -40,6 +40,6 @@ let frutas = ["Maçã", "Banana", "Acerola", "Uva"]
 
 console.log(frutas);
 
-frutas.forEach(function(pinto) {
-console.log("Nome: " + pinto)
+frutas.forEach(function(pi) {
+console.log("Nome: " + pi)
 })
